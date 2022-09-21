@@ -23,48 +23,16 @@ header nav{
 }
 
 .TopNav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  
+  display: flex;
+  justify-content: space-evenly;
   
 }
 
 .TopNav li{
-  display: inline-block;
+  list-style-type: upper-roman;
   color: rgba(165, 98, 98, 0.515);
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
-  
-}
-
-.sidebar ul {
-  list-style-type:circle;
-  margin: 0;
-  padding: 0;
-  
-  
-}
-
-.sidebar li{
-  display: block;
-  color: rgba(0, 0, 0, 0.515);
-  text-align: center;
-  padding: 14px 16px;
-  
-}
-
-.sidebar{
-  position: fixed;
-  background-color: blueviolet;
-  height: 100vh;
-  min-width: fit-content;
-
-}
-
-body {
-  font-family: sans-serif;
 }
 
 .maingrid{
@@ -73,6 +41,46 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.2rem;
 
 }
+.sidebar{
+  grid-row:1 / 15;
+  background-color: blueviolet;
+}
+
+.sidebar ul {
+  position: sticky;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 100vh;
+  top: 0rem;
+}
+
+.sidebar li{
+  counter-increment: li;
+  color: rgba(222, 222, 222, 0.515);
+  text-decoration: underline;
+  
+}
+
+.sidebar li::marker{
+  display: list-item;
+  content: "#" counter(li) " ";
+  color: lightsalmon;
+  font-weight: bold;
+}
+
+
+li::marker {
+  content: "🧡 ";
+}
+
+
+
+body {
+  font-family: sans-serif;
+}
+
 
 .maingrid article{
   display: flex;
@@ -85,42 +93,61 @@ body {
 }
 
 .maingrid img{
-  max-width: 50%;
+  width: 205vw;
   min-height: 50vh;
   object-fit:cover;
+  transition: transform .2s;
+  overflow: hidden;
+}
+
+.maingrid img:hover{
+  transform: scale(1.5);
 }
 
 
-
-.p_left{
-  grid-column: 4/7
-  }
-
-
-.p_right{
-  grid-column: 2/5;   
-  }
-  
 .TextArea{
-  padding: 5%;
   display: flex;
   align-items: center;
   flex-flow: column;
   max-height: 50vh;
 }
+
+.TextArea *{
+  margin: 5% 0 0 0;
+}
 .TextArea h2 {
-  padding: 1rem;
+  text-align: center;
+  
+
 }
 
 .TextArea p {
+  min-height: 20vh;
   text-align: center;
   color: brown;
   overflow: hidden;
-  /* text-overflow: ellipsis; */
+  text-overflow: ellipsis;
 }
 
+footer nav{
+  grid-column-start: 2;
+  grid-column-end: 3;
 
 
+}
+
+.footerNav ul {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.footerNav li{
+  list-style-type: upper-roman;
+  color: rgba(165, 98, 98, 0.515);
+  text-align: center;
+  padding: 14px 16px;
+}
 
 
 

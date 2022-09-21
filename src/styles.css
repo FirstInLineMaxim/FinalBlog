@@ -108,8 +108,12 @@ body {
   flex-flow: column;
   max-height: 50vh;
 }
+.TextArea h2 {
+  padding: 1rem;
+}
 
 .TextArea p {
+  text-align: center;
   color: brown;
   overflow: hidden;
   /* text-overflow: ellipsis; */

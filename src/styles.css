@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+
 header{
+  position: sticky;
+  top: 0;
   display: grid;
-  background-color: wheat;
+  background-color: whitesmoke;
   grid-template-columns: 1fr 2fr 1fr;
   
 }
+
+
 footer{
   display: grid;
-  background-color: wheat;
+  background-color: whitesmoke;
   grid-template-columns: 1fr 2fr 1fr;
   
 }
 .logo{
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 6.5vh;
 }
 
@@ -23,43 +30,80 @@ header nav{
 }
 
 .TopNav ul {
+  font-family: Neonderthaw;
   display: flex;
   justify-content: space-evenly;
   
 }
 
 .TopNav li{
+  font-size: 30px;
   list-style-type: upper-roman;
-  color: rgba(165, 98, 98, 0.515);
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
 }
 
+.TopNav li:hover{
+  animation: fadeIn 1.5s;
+  color: rgb(255, 0, 0);
+  
+
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.herosection{
+  height: 100vh;
+  background: url(/src/min%20images/Hero_section.avif) no-repeat center center;
+  justify-content: center;
+  background-size: cover;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.down {
+  text-align: center;
+  position: absolute;
+  opacity: 0.6;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  color: #fff;
+}
 .maingrid{
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.2rem;
 
 }
+
 .sidebar{
   grid-row:1 / 15;
   background-color: blueviolet;
 }
 
 .sidebar ul {
+ min-width: fit-content;
   position: sticky;
-  display: flex;
+  display:flex;
   flex-flow: column;
-  align-items: center;
-  justify-content: space-between;
+  margin-left: 30%;
   max-height: 100vh;
-  top: 0rem;
+  top: 2.58rem;
 }
 
 .sidebar li{
+  
   counter-increment: li;
   color: rgba(222, 222, 222, 0.515);
   text-decoration: underline;
+
   
 }
 
@@ -70,16 +114,18 @@ header nav{
   font-weight: bold;
 }
 
+.sidebarleft{
+  grid-column-start: 6;
+  grid-column-end: 7;
+}
+
 
 li::marker {
-  content: "🧡 ";
+  content: "";
 }
 
 
 
-body {
-  font-family: sans-serif;
-}
 
 
 .maingrid article{
@@ -193,7 +239,7 @@ footer nav{
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
+    /* position: relative; */
     display: inline-block;
      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
      7px 7px 20px 0px rgba(0,0,0,.1),

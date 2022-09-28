@@ -190,6 +190,7 @@ li::marker {
   margin: 5% 0 0 0;
 }
 .TextArea h2 {
+  font-size: 1.5rem;
   color: #E13A65;
   text-align: center;
   
@@ -197,6 +198,7 @@ li::marker {
 }
 
 .TextArea p {
+  padding: 0 10%;
   min-height: 20vh;
   text-align: center;
   color: #86785D;
@@ -269,7 +271,7 @@ footer nav{
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
+    /* position: relative; */
     display: inline-block;
      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
      7px 7px 20px 0px rgba(0,0,0,.1),
